@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocVibe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: 'var(--background)',
+              foreground: 'var(--foreground)',
+              primary: 'var(--primary)',
+              'primary-hover': 'var(--primary-hover)',
+              error: 'var(--error)',
+              success: 'var(--success)',
+              surface: 'var(--surface)',
+              'surface-highlight': 'var(--surface-highlight)',
+              border: 'var(--border)',
+              subtle: 'var(--subtle)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-up': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+              },
+              slideUp: {
+                'from': { transform: 'translateY(16px)', opacity: '0' },
+                'to': { transform: 'translateY(0)', opacity: '1' },
+              }
+            },
+            typography: (theme) => ({
+              DEFAULT: {
+                css: {
+                  color: theme('colors.foreground'),
+                  '--tw-prose-headings': theme('colors.foreground'),
+                  '--tw-prose-links': theme('colors.primary'),
+                  '--tw-prose-code': theme('colors.primary'),
+                  '--tw-prose-pre-bg': theme('colors.surface-highlight'),
+                  '--tw-prose-quote-borders': theme('colors.primary'),
+                },
+              },
+            }),
+          }
+        },
+        plugins: [
+          function({ addBase, theme }) {
+            addBase({
+              'h1': { fontSize: theme('fontSize.3xl'), fontWeight: theme('fontWeight.bold'), letterSpacing: '-0.02em' },
+              'h2': { fontSize: theme('fontSize.2xl'), fontWeight: theme('fontWeight.semibold'), letterSpacing: '-0.02em' },
+              'h3': { fontSize: theme('fontSize.lg'), fontWeight: theme('fontWeight.medium'), letterSpacing: '-0.01em' },
+            })
+          }
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --background: #ffffff;
+        --foreground: #09090b;
+        --primary: #6366f1; /* Indigo 500 */
+        --primary-hover: #4f46e5;
+        --error: #ef4444;
+        --success: #10b981;
+        --surface: #ffffff;
+        --surface-highlight: #f4f4f5;
+        --border: #e4e4e7;
+        --subtle: #71717a;
+      }
+      
+      .dark {
+        --background: #030712; /* Gray 950 - Deep Space */
+        --foreground: #f9fafb; /* Gray 50 */
+        --primary: #818cf8; /* Indigo 400 */
+        --primary-hover: #6366f1;
+        --error: #f87171;
+        --success: #34d399;
+        --surface: #0f121d; /* Slightly lighter/tinted black */
+        --surface-highlight: #1e293b; 
+        --border: #1f2937; /* Gray 800 */
+        --subtle: #9ca3af;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Subtle gradient mesh background */
+      .bg-gradient-mesh {
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.05) 0px, transparent 50%);
+      }
+      .dark .bg-gradient-mesh {
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--border); 
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--subtle); 
+      }
+      
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .dark .glass {
+        background: rgba(15, 18, 29, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* Markdown specific styles */
+      .markdown-content { font-size: 1rem; line-height: 1.75; }
+      .markdown-content h1, .markdown-content h2, .markdown-content h3 { margin-top: 2em; margin-bottom: 0.75em; color: var(--foreground); }
+      .markdown-content p { margin-bottom: 1.5em; color: var(--foreground); opacity: 0.9; }
+      .markdown-content li { margin-bottom: 0.5em; }
+      .markdown-content code { background-color: var(--surface-highlight); padding: 0.2em 0.4em; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: var(--primary); }
+      .markdown-content pre { background-color: var(--surface-highlight); padding: 1.5rem; border-radius: 12px; overflow-x: auto; margin-bottom: 1.5em; border: 1px solid var(--border); }
+      .markdown-content pre code { background-color: transparent; padding: 0; color: var(--foreground); }
+      .markdown-content blockquote { border-left: 3px solid var(--primary); padding-left: 1.25rem; font-style: italic; color: var(--subtle); margin-bottom: 1.5em; }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.1/",
+        "react": "https://esm.sh/react@^19.2.1",
+        "recharts": "https://esm.sh/recharts@^3.5.1",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+        "@radix-ui/react-tabs": "https://esm.sh/@radix-ui/react-tabs@^1.0.4",
+        "clsx": "https://esm.sh/clsx@^2.1.0",
+        "react-markdown": "https://esm.sh/react-markdown@9.0.1"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased h-full bg-gradient-mesh">
+    <div id="root" class="h-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
