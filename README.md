@@ -2,6 +2,8 @@
 
 **AI-Powered Documentation for Vibe Coders**
 
+![DocVibe Screenshot](images/screen.jpg)
+
 DocVibe is the essential companion for modern developers who move fast. It transforms your raw ideas into comprehensive, professional project documentation in minutes, ensuring your "vibe coding" sessions are grounded in solid architectural decisions.
 
 ## Why DocVibe?
