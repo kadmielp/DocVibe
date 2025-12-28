@@ -1,6 +1,14 @@
-# DocVibe
-
-**AI-Powered Documentation for Vibe Coders**
+<p align="center">
+  <img src="images/logo.png" alt="Logo" width="128" />
+</p>
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/kadmielp/DocVibe" alt="GitHub top language" />
+  <img src="https://img.shields.io/github/languages/count/kadmielp/DocVibe" alt="GitHub language count" />
+  <img src="https://img.shields.io/github/repo-size/kadmielp/DocVibe" alt="GitHub repo size" />
+  <img src="https://img.shields.io/github/last-commit/kadmielp/DocVibe" alt="GitHub last commit" />
+  <img alt="GitHub License" src="https://img.shields.io/github/license/kadmielp/DocVibe">
+</p>
+<h1 align="center"># DocVibe - AI-powered documentation for Vibe Coders</h1>
 
 ![DocVibe Screenshot](images/screen.jpg)
 
