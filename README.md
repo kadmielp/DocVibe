@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/github/last-commit/kadmielp/DocVibe" alt="GitHub last commit" />
   <img alt="GitHub License" src="https://img.shields.io/github/license/kadmielp/DocVibe">
 </p>
-<h1 align="center"># DocVibe - AI-powered documentation for Vibe Coders</h1>
+<h1 align="center">DocVibe - AI-powered documentation for Vibe Coders</h1>
 
 ![DocVibe Screenshot](images/screen.jpg)
 
